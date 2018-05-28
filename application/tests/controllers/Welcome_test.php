@@ -22,6 +22,11 @@ class Welcome_test extends TestCase
 		$this->assertResponseCode(404);
 	}
 
+	public function test_method_nuevo() {
+		$output = $this->request('GET', 'welcome/method_nuevo');
+		$this->assertContains('test', $output);
+	}
+
 	public function test_APPPATH()
 	{
 		$actual = realpath(APPPATH);
